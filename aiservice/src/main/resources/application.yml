@@ -3,6 +3,11 @@ spring:
     name: ai-service
   mongodb:
     uri: mongodb://localhost:27017/fitnessrecommendation
+  rabbitmq:
+    host: localhost        # space after colon
+    port: 5672             # space after colon
+    username: guest        #  space after colon
+    password: guest        # space after colon
 
 eureka:
   client:
@@ -14,3 +19,11 @@ eureka:
 
 server:
   port: 8083
+
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
